@@ -4,13 +4,15 @@
 user=`id -un`
 
 # start sharing xhost
-xhost +local:root
+# xhost +local:root
+# export docker display
+export DISPLAY=172.19.80.1:0 
 
 # run docker
 docker run --rm \
   --net=host \
   --ipc=host \
-  --gpus all \
+  # --gpus all \
   --privileged \
   -v /tmp/.X11-unix:/tmp/.X11-unix:rw \
   -v $HOME/.Xauthority:$docker/.Xauthority \
