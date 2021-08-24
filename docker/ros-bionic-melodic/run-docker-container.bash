@@ -10,7 +10,7 @@ xhost +local:root
 docker run --rm \
   --net=host \
   --ipc=host \
-  --gpus all \
+  # --gpus all \ for non gpu environment
   --privileged \
   -v /tmp/.X11-unix:/tmp/.X11-unix:rw \
   -v $HOME/.Xauthority:$docker/.Xauthority \
